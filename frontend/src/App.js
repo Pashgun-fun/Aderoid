@@ -16,6 +16,7 @@ import {
   CellButton,
   FormItem,
   Button,
+  Input
 } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
 import "./App.css";
@@ -132,10 +133,9 @@ function App() {
         <FormItem top="ИНН">
           <div className="alert" ref={error}></div>
           <div className="success" ref={success}></div>
-          <input
+          <Input
             type="text"
-            ref={secondInputRef}
-            className="inputINN"
+            getRef={secondInputRef}
             onChange={validator} />
         </FormItem>
         {

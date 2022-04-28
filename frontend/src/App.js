@@ -28,6 +28,7 @@ function App() {
   const [activeModal, setActiveModal] = useState(false);
   const [showCompany, setShowCompany] = useState(false);
   const [companyName, setCompanyName] = useState("");
+  const [companyInn, setCompanyInn] = useState("");
   const url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party";
   const token = "cd85752a0e38c525221c5e3d1ba0a736e8aeb0b2";
 
@@ -87,6 +88,7 @@ function App() {
     let data = await sendRequest(secondInputRef.current.value)
     if (data.suggestions.length !== 0) {
       setCompanyName(data.suggestions.shift().value);
+      setCompanyInn(data.suggestions.shift().data.inn)
       setShowCompany(true);
       return;
     }
@@ -138,7 +140,7 @@ function App() {
         </FormItem>
         {
           showCompany ?
-            <Div>Компания: {companyName} ИНН: {secondInputRef.current.value && ""}</Div> :
+            <Div>Компания: {companyName} ИНН: {companyInn}</Div> :
             <Div>Компания с таким ИНН не найдена (Не действующая)</Div>
         }
       </ModalPage>

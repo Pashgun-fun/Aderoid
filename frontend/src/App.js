@@ -138,7 +138,7 @@ function App() {
         </FormItem>
         {
           showCompany ?
-            <Div>Компания: {companyName} ИНН: {secondInputRef.current.value}</Div> :
+            <Div>Компания: {companyName} ИНН: {secondInputRef.current.value && ""}</Div> :
             <Div>Компания с таким ИНН не найдена (Не действующая)</Div>
         }
       </ModalPage>

@@ -88,6 +88,8 @@ function App() {
   async function checkCompany() {
     let data = await sendRequest(secondInputRef.current.value)
     if (data.suggestions.length !== 0) {
+      error.current.innerHTML = "";
+      success.current.innerHTML = "Компания найдена";
       setCompanyName(data.suggestions.shift().value);
       setCompanyInn(data.suggestions.shift().data.inn)
       setShowCompany(true);

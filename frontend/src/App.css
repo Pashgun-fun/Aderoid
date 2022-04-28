@@ -1,0 +1,22 @@
+.inputINN{
+    background: rgb(224, 224, 224);
+    border: .5px solid silver;
+    padding: 7px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    width: 100%;
+}
+
+.alert{
+    margin: 0 0 10px 0;
+    color: red;
+}
+
+.success{
+    margin: 0 0 10px 0;
+    color: green;
+}
+
+.image{
+    width: 100%;
+}
